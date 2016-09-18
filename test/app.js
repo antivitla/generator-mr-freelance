@@ -19,12 +19,13 @@ describe('generator-mr-freelance:app', function () {
   it('Creates main structure', function (done) {
     setTimeout(function () {
       assert.file([
-        rootPath + '/.sublime/' + props.projectName + '.sublime-project',
+        rootPath + '/.sublime-text/' + props.projectName + '.sublime-project',
         rootPath + '/incoming',
         rootPath + '/www/.git',
         rootPath + '/www/frontend/dist',
         rootPath + '/www/frontend/src',
-        rootPath + '/www/frontend/readme.md'
+        rootPath + '/www/frontend/readme.md',
+        rootPath + '/journal.md',
       ]);
       done();
     }, 1000);

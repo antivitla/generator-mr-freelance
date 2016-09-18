@@ -53,6 +53,12 @@ module.exports = yeoman.Base.extend({
     // Main 'incoming' and 'www'
     mkdirp(this.destinationPath(projectFolder + '/incoming/'));
 
+    // Journal.md
+    this.fs.copy(
+      this.templatePath('journal.md'),
+      this.destinationPath(projectFolder + '/journal.md')
+    );
+
     // Main working folder 'frontend' with 'readme.md'
     this.fs.copy(
       this.templatePath('frontend-readme.md'),
@@ -70,7 +76,7 @@ module.exports = yeoman.Base.extend({
     this.fs.copy(
       this.templatePath('.sublime-project'),
       this.destinationPath(
-        projectFolder + '/.sublime/' +
+        projectFolder + '/.sublime-text/' +
         projectTitle + '.sublime-project'
       )
     );
