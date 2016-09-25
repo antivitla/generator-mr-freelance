@@ -4,7 +4,6 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 var mkdirp = require('mkdirp');
 var Chance = require('chance');
-
 var parsePropsToFolderName = require('./parse-props-to-folder-name.js');
 
 module.exports = yeoman.Base.extend({
@@ -61,16 +60,16 @@ module.exports = yeoman.Base.extend({
 
     // Main working folder 'frontend' with 'readme.md'
     this.fs.copy(
-      this.templatePath('frontend-readme.md'),
-      this.destinationPath(projectFolder + '/www/frontend/readme.md')
+      this.templatePath('readme.md'),
+      this.destinationPath(projectFolder + '/www/readme.md')
     );
 
     // Git init
     this.spawnCommand('git', ['init', projectFolder + '/www']);
 
     // 'Dist' and 'Src' folders
-    mkdirp(this.destinationPath(projectFolder + '/www/frontend/src'));
-    mkdirp(this.destinationPath(projectFolder + '/www/frontend/dist'));
+    mkdirp(this.destinationPath(projectFolder + '/www/src'));
+    mkdirp(this.destinationPath(projectFolder + '/www/dist'));
 
     // Sublime Text project file
     this.fs.copy(

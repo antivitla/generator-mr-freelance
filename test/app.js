@@ -22,10 +22,10 @@ describe('generator-mr-freelance:app', function () {
         rootPath + '/.sublime-text/' + props.projectName + '.sublime-project',
         rootPath + '/incoming',
         rootPath + '/www/.git',
-        rootPath + '/www/frontend/dist',
-        rootPath + '/www/frontend/src',
-        rootPath + '/www/frontend/readme.md',
-        rootPath + '/journal.md',
+        rootPath + '/www/dist',
+        rootPath + '/www/src',
+        rootPath + '/www/readme.md',
+        rootPath + '/journal.md'
       ]);
       done();
     }, 1000);
